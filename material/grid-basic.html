@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Simple Grid Layout</title>
+		<style>
+			/* Simple Grid Layout */
+			.grid-container {
+				display: grid;
+				grid-template-areas:
+					"header header header"
+					"menu main sidebar"
+					"footer footer footer";
+				grid-template-columns: 1fr 2fr 1fr;
+				grid-gap: 10px;
+				padding: 10px;
+			}
+
+			.item1 {
+				grid-area: header;
+				background-color: lightblue;
+				padding: 20px;
+			}
+			.item2 {
+				grid-area: menu;
+				background-color: lightgreen;
+				padding: 20px;
+			}
+			.item3 {
+				grid-area: main;
+				background-color: lightcoral;
+				padding: 20px;
+			}
+			.item4 {
+				grid-area: sidebar;
+				background-color: lightgoldenrodyellow;
+				padding: 20px;
+			}
+			.item5 {
+				grid-area: footer;
+				background-color: lightgray;
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="grid-container">
+			<div class="item1">Header</div>
+			<div class="item2">Menu</div>
+			<div class="item3">Main Content</div>
+			<div class="item4">Right Sidebar</div>
+			<div class="item5">Footer</div>
+		</div>
+
+		<!--  Grid Layout di sini menggunakan grid-template-areas untuk membuat layout sederhana dengan 3 baris: 
+            header, menu dan main content, serta footer di bagian bawah.
+            grid-template-columns menentukan ukuran kolom: 1fr (1 bagian untuk menu), 
+            2fr (2 bagian untuk konten utama), dan 1fr (1 bagian untuk sidebar).
+            grid-gap digunakan untuk memberikan jarak antara elemen.-->
+	</body>
+</html>

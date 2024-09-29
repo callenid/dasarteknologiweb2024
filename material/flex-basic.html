@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Simple Flexbox Layout</title>
+		<style>
+			/* Simple Flexbox Layout */
+			.flex-container {
+				display: flex;
+				flex-direction: column;
+				height: 100vh;
+			}
+
+			header,
+			footer {
+				background-color: lightblue;
+				padding: 20px;
+				text-align: center;
+			}
+
+			nav,
+			aside {
+				background-color: lightgreen;
+				padding: 20px;
+			}
+
+			main {
+				background-color: lightcoral;
+				padding: 20px;
+				flex-grow: 1;
+			}
+
+			.flex-container {
+				display: flex;
+				flex-direction: column;
+			}
+
+			main,
+			aside {
+				flex: 1;
+				display: flex;
+				justify-content: space-between;
+			}
+
+			@media (min-width: 768px) {
+				.flex-container {
+					flex-direction: row;
+				}
+
+				nav,
+				aside {
+					width: 200px;
+				}
+
+				main {
+					flex-grow: 2;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="flex-container">
+			<header>Header</header>
+			<nav>Menu</nav>
+			<main>Main Content</main>
+			<aside>Right Sidebar</aside>
+			<footer>Footer</footer>
+		</div>
+
+		<!--Pada layout Flexbox, elemen-elemen diatur dalam kolom secara default menggunakan flex-direction: column.
+            Pada lebar layar yang lebih besar (lebih dari 768px), layout berubah menjadi row dengan elemen menu, 
+            konten utama, dan sidebar diatur secara horizontal.
+            flex-grow digunakan untuk membuat elemen main lebih besar dan responsif dibanding elemen lain.
+            -->
+	</body>
+</html>

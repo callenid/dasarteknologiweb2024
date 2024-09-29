@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Grid Layout Example</title>
+		<style>
+			/* General Styles */
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				display: grid;
+				grid-template-areas:
+					"header header header"
+					"nav main aside"
+					"footer footer footer";
+				grid-template-columns: 1fr 3fr 1fr;
+				grid-template-rows: auto 1fr auto;
+				height: 100vh;
+			}
+
+			header {
+				grid-area: header;
+				background-color: #4caf50;
+				color: white;
+				text-align: center;
+				padding: 20px;
+			}
+
+			nav {
+				grid-area: nav;
+				background-color: #f4f4f4;
+				padding: 20px;
+			}
+
+			main {
+				grid-area: main;
+				padding: 20px;
+			}
+
+			.sidebar {
+				grid-area: aside;
+				background-color: #f4f4f4;
+				padding: 20px;
+			}
+
+			footer {
+				grid-area: footer;
+				background-color: #4caf50;
+				color: white;
+				text-align: center;
+				padding: 10px;
+			}
+
+			h1,
+			h2 {
+				margin-bottom: 15px;
+			}
+
+			ul {
+				list-style-type: none;
+				padding: 0;
+			}
+
+			ul li {
+				margin-bottom: 10px;
+			}
+
+			ul li a {
+				text-decoration: none;
+				color: #333;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Welcome to Grid Layout</h1>
+		</header>
+
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+
+		<main>
+			<section class="content">
+				<h2>Main Content</h2>
+				<p>This is an example of how to use CSS Grid Layout.</p>
+			</section>
+
+			<aside class="sidebar">
+				<h2>Sidebar</h2>
+				<p>This is a sidebar content area.</p>
+			</aside>
+
+			<section class="additional-content">
+				<h2>Additional Content</h2>
+				<p>Here is some more content using the grid layout.</p>
+			</section>
+		</main>
+
+		<footer>
+			<p>&copy; 2024 Your Website. All rights reserved.</p>
+		</footer>
+	</body>
+</html>

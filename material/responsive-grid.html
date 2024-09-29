@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Responsive Design with Media Queries</title>
+		<style>
+			/* Styling untuk semua layar */
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+			}
+
+			.container {
+				display: grid;
+				grid-template-columns: repeat(
+					4,
+					1fr
+				); /* 4 kolom default untuk desktop */
+				gap: 20px;
+				padding: 20px;
+			}
+
+			.box {
+				padding: 20px;
+				background-color: #007bff;
+				color: white;
+				border-radius: 5px;
+			}
+
+			/* Media Query untuk Tablet (768px hingga 1024px) */
+			@media (max-width: 1024px) and (min-width: 768px) {
+				.container {
+					grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
+				}
+			}
+
+			/* Media Query untuk Smartphone (di bawah 768px) */
+			@media (max-width: 768px) {
+				.container {
+					grid-template-columns: 1fr; /* 1 kolom di smartphone */
+				}
+				.box {
+					padding: 15px; /* Padding lebih kecil di smartphone */
+				}
+			}
+
+			/* Media Query untuk Desktop (di atas 1024px) */
+			@media (min-width: 1025px) {
+				.container {
+					grid-template-columns: repeat(4, 1fr); /* 4 kolom di desktop */
+				}
+				.box {
+					padding: 25px; /* Padding lebih besar di desktop */
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Responsive Design with Media Queries</h1>
+		<div class="container">
+			<div class="box">Box 1</div>
+			<div class="box">Box 2</div>
+			<div class="box">Box 3</div>
+			<div class="box">Box 4</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Responsive Example with Color and Text Changes</title>
+		<style>
+			/* Default Styles - Untuk layar besar (Desktop) */
+			body {
+				font-family: Arial, sans-serif;
+				background-color: lightblue; /* Warna latar untuk desktop */
+				color: black;
+				text-align: center;
+				padding: 50px;
+			}
+
+			h1 {
+				font-size: 3em; /* Ukuran teks besar untuk desktop */
+				margin-bottom: 20px;
+			}
+
+			p {
+				font-size: 1.5em; /* Ukuran paragraf lebih besar di desktop */
+			}
+
+			/* Media Query untuk Tablet (Ukuran Layar 768px - 1024px) */
+			@media (max-width: 1024px) and (min-width: 768px) {
+				body {
+					background-color: lightgreen; /* Ganti warna latar di tablet */
+					color: darkgreen; /* Ganti warna teks */
+				}
+
+				h1 {
+					font-size: 2.5em; /* Ukuran teks lebih kecil di tablet */
+				}
+
+				p {
+					font-size: 1.3em; /* Ukuran paragraf lebih kecil di tablet */
+				}
+			}
+
+			/* Media Query untuk Smartphone (Layar Kecil di bawah 768px) */
+			@media (max-width: 768px) {
+				body {
+					background-color: lightcoral; /* Ganti warna latar di smartphone */
+					color: white; /* Ganti warna teks */
+				}
+
+				h1 {
+					font-size: 2em; /* Ukuran teks lebih kecil di smartphone */
+				}
+
+				p {
+					font-size: 1em; /* Ukuran paragraf lebih kecil di smartphone */
+				}
+			}
+
+			/* Media Query untuk Layar Sangat Kecil (di bawah 480px) */
+			@media (max-width: 480px) {
+				body {
+					background-color: lightyellow; /* Ganti warna latar di layar sangat kecil */
+					color: darkblue; /* Ganti warna teks */
+				}
+
+				h1 {
+					font-size: 1.5em; /* Ukuran teks lebih kecil lagi */
+				}
+
+				p {
+					font-size: 0.9em; /* Ukuran paragraf lebih kecil lagi */
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Responsive Color and Text Example</h1>
+		<p>
+			The background color and text size changes depending on the screen size.
+		</p>
+	</body>
+</html>

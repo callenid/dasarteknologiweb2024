@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Transition Examples</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f7f7f7;
+				padding: 20px;
+			}
+
+			h1 {
+				text-align: center;
+				margin-bottom: 40px;
+				color: #333;
+			}
+
+			.section-title {
+				margin: 40px 0 20px;
+				color: #333;
+				font-size: 1.5em;
+				text-align: center;
+				padding-bottom: 10px;
+				border-bottom: 2px solid #ddd;
+			}
+
+			.example-container {
+				display: flex;
+				justify-content: center;
+				margin-bottom: 40px;
+			}
+
+			.example-container p,
+			.example-container a,
+			.example-container img,
+			.example-container div {
+				text-align: center;
+				padding: 10px;
+			}
+
+			/* Border Bottom Transition */
+			a {
+				text-decoration: none;
+				color: black;
+				border-bottom: 2px solid transparent;
+				transition: border-bottom 0.3s ease;
+			}
+
+			a:hover {
+				border-bottom: 2px solid #ff0055;
+			}
+
+			/* Background Color Transition */
+			button {
+				background-color: lightblue;
+				padding: 10px 20px;
+				border: none;
+				font-size: 1em;
+				cursor: pointer;
+				transition: background-color 0.5s ease-in-out;
+			}
+
+			button:hover {
+				background-color: #ff0055;
+				color: white;
+			}
+
+			/* Text Color Transition */
+			p {
+				font-size: 1.2em;
+				color: black;
+				transition: color 0.3s ease-in;
+			}
+
+			p:hover {
+				color: #ff0055;
+			}
+
+			/* Transform (Scale & Rotate) Transition */
+			.box {
+				width: 100px;
+				height: 100px;
+				background-color: lightgreen;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transition: transform 0.3s ease;
+			}
+
+			.box:hover {
+				transform: scale(1.2) rotate(10deg);
+			}
+
+			/* Opacity Transition */
+			img {
+				width: 200px;
+				height: auto;
+				transition: opacity 0.4s ease-out;
+			}
+
+			img:hover {
+				opacity: 0.5;
+			}
+
+			/* Border Radius Transition */
+			.box-radius {
+				width: 100px;
+				height: 100px;
+				background-color: coral;
+				border-radius: 0;
+				transition: border-radius 0.5s ease;
+			}
+
+			.box-radius:hover {
+				border-radius: 50%;
+			}
+
+			/* Box Shadow Transition */
+			.box-shadow {
+				width: 100px;
+				height: 100px;
+				background-color: lightcoral;
+				box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+				transition: box-shadow 0.5s ease;
+			}
+
+			.box-shadow:hover {
+				box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+			}
+
+			/* Font Size Transition */
+			.text-size {
+				font-size: 20px;
+				color: darkblue;
+				transition: font-size 0.5s ease;
+			}
+
+			.text-size:hover {
+				font-size: 30px;
+			}
+
+			/* Parallax Effect (Background Position) */
+			.parallax {
+				width: 100%;
+				max-width: 800px;
+				height: 200px;
+				background-image: url("../asset/image/LaboratoriumWebMultimediadanPembuatanGames.png");
+				background-position: center;
+				background-size: cover;
+				transition: background-position 0.5s ease;
+				margin: 0 auto;
+				border-radius: 10px;
+			}
+
+			.parallax:hover {
+				background-position: top;
+			}
+
+			/* Multiple Property Transitions */
+			.multi-transition {
+				width: 100px;
+				height: 100px;
+				background-color: lightblue;
+				border-radius: 0;
+				box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+				transition: width 0.4s ease, height 0.4s ease, border-radius 0.4s ease,
+					box-shadow 0.4s ease;
+			}
+
+			.multi-transition:hover {
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+			}
+
+			/* Opacity and Transform Transition */
+			.opacity-transform {
+				width: 100px;
+				height: 100px;
+				background-color: lightpink;
+				opacity: 1;
+				transform: translateY(0);
+				transition: opacity 0.4s ease, transform 0.4s ease;
+			}
+
+			.opacity-transform:hover {
+				opacity: 0.5;
+				transform: translateY(-20px);
+			}
+
+			/* Separator between examples */
+			.example-container:not(:last-child)::after {
+				content: "";
+				display: block;
+				width: 100%;
+				max-width: 800px;
+				height: 2px;
+				background-color: #ddd;
+				margin: 40px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>CSS Transition Examples</h1>
+
+		<!-- Border Bottom Transition -->
+		<div class="section-title">Border Bottom Transition</div>
+		<div class="example-container">
+			<a href="#">Hover over this link</a>
+		</div>
+
+		<!-- Background Color Transition -->
+		<div class="section-title">Background Color Transition</div>
+		<div class="example-container">
+			<button>Hover over this button</button>
+		</div>
+
+		<!-- Text Color Transition -->
+		<div class="section-title">Text Color Transition</div>
+		<div class="example-container">
+			<p>Hover over this paragraph</p>
+		</div>
+
+		<!-- Transform (Scale & Rotate) Transition -->
+		<div class="section-title">Transform: Scale & Rotate</div>
+		<div class="example-container">
+			<div class="box">Hover me</div>
+		</div>
+
+		<!-- Opacity Transition -->
+		<div class="section-title">Opacity Transition</div>
+		<div class="example-container">
+			<img
+				src="../asset/image/PersonalityTestPicture.png"
+				alt="Image with opacity transition"
+			/>
+		</div>
+
+		<!-- Border Radius Transition -->
+		<div class="section-title">Border Radius Transition</div>
+		<div class="example-container">
+			<div class="box-radius">Hover me</div>
+		</div>
+
+		<!-- Box Shadow Transition -->
+		<div class="section-title">Box Shadow Transition</div>
+		<div class="example-container">
+			<div class="box-shadow">Hover me</div>
+		</div>
+
+		<!-- Font Size Transition -->
+		<div class="section-title">Font Size Transition</div>
+		<div class="example-container">
+			<p class="text-size">Hover over this text</p>
+		</div>
+
+		<!-- Parallax Effect (Background Position) -->
+		<div class="section-title">Parallax Effect (Background Position)</div>
+		<div class="example-container">
+			<div class="parallax"></div>
+		</div>
+
+		<!-- Multiple Property Transitions -->
+		<div class="section-title">Multiple Property Transitions</div>
+		<div class="example-container">
+			<div class="multi-transition">Hover me</div>
+		</div>
+
+		<!-- Opacity & Transform Transition -->
+		<div class="section-title">Opacity & Transform Transition</div>
+		<div class="example-container">
+			<div class="opacity-transform">Hover me</div>
+		</div>
+	</body>
+</html>

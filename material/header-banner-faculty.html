@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Menu</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				font-family: "Montserrat", sans-serif;
+			}
+
+			.top-header {
+				display: flex;
+				justify-content: space-between;
+				padding: 10px 50px;
+				color: rgb(181, 192, 212);
+				font-size: 0.5em;
+				background-color: rgb(0, 45, 119);
+			}
+
+			.top-header .right-menu a {
+				color: rgb(181, 192, 212);
+				margin-left: 20px;
+				text-decoration: none;
+			}
+
+			.lang-menu {
+				margin-left: 25px;
+			}
+
+			.nav-bar {
+				display: flex;
+				justify-content: space-between;
+				padding: 10px 50px;
+				color: rgb(0, 41, 109);
+				font-size: 0.5em;
+				background-color: #00296d;
+			}
+
+			.nav-bar .logo img {
+				max-width: 100%;
+				height: auto;
+			}
+
+			nav {
+				display: flex;
+				align-items: center;
+			}
+
+			nav a {
+				color: white;
+				margin-left: 20px;
+				text-decoration: none;
+				font-weight: bold;
+				font-size: 1.1em;
+				text-decoration: none;
+				border-bottom: 0px solid transparent;
+				padding-bottom: 5px;
+				transition: border-bottom 0.3s ease;
+			}
+
+			nav a:hover {
+				border-bottom: 2px solid #ff0055;
+			}
+
+			nav a:last-child {
+				margin-left: 0;
+			}
+
+			/* Banner container */
+			.banner {
+				position: relative;
+				width: 100%;
+				height: 350px;
+				overflow: hidden;
+			}
+
+			/* Banner image */
+			.banner img {
+				width: 100%;
+				height: auto;
+				object-fit: cover;
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				animation: imageAnimation 6s infinite;
+			}
+
+			/* Different delay for each image to create the slideshow effect */
+			.banner img:nth-child(1) {
+				animation-delay: 0s;
+			}
+			.banner img:nth-child(2) {
+				animation-delay: 2s;
+			}
+			.banner img:nth-child(3) {
+				animation-delay: 4s;
+			}
+
+			/* Keyframes for image fade in/out */
+			@keyframes imageAnimation {
+				0% {
+					opacity: 0;
+				}
+				33.33% {
+					opacity: 1;
+				}
+				66.66% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+
+			.faculty-list {
+				text-align: left;
+				padding: 10px 50px;
+			}
+
+			.faculty-list h2 {
+				font-size: 28px;
+				color: #e00055;
+				margin-bottom: 10px;
+			}
+
+			.faculty-list p {
+				color: #333;
+				margin-bottom: 20px;
+			}
+
+			.faculty-grid {
+				display: grid;
+				grid-template-columns: repeat(
+					4,
+					2fr
+				); /* 4 cards per row, each column wider */
+				grid-auto-rows: minmax(80px, auto); /* Row height is reduced */
+				gap: 10px; /* Reduced gap */
+				padding: 0 10px;
+			}
+
+			/* Styling for each card */
+			.faculty-card {
+				display: flex;
+				background-color: #fff;
+				border-radius: 8px;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+				overflow: hidden;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.faculty-card:hover {
+				transform: scale(1.05);
+				box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+			}
+
+			/* Image inside the card */
+			.faculty-card img {
+				width: 80px; /* Adjust the width of the image */
+				height: 100%; /* Ensure the image takes full height */
+				object-fit: cover;
+			}
+
+			/* Faculty Information (Title) */
+			.faculty-list {
+				margin-top: 80px;
+			}
+
+			.faculty-info {
+				padding: 90px;
+				text-align: left;
+				display: flex;
+				align-items: center;
+				flex: 1; /* Ensures that text takes available space */
+			}
+
+			.faculty-info h3 {
+				font-size: 0.75em; /* Adjusted text size */
+				color: #333;
+			}
+
+			.sidebar-allfaculty {
+				font-size: 0.5em;
+			}
+
+			.sidebar-allfaculty p {
+				text-align: left;
+				margin-bottom: 5px;
+				color: #3d74c6;
+			}
+
+			.sidebar-allfaculty input {
+				margin-left: -20px;
+				margin-bottom: 80px;
+			}
+
+			.faculty-desc {
+				text-align: left;
+				background-color: rgb(234, 247, 255);
+				padding: 10px;
+				width: 80%;
+			}
+
+			.faculty-desc:hover {
+				text-align: left;
+				background-color: rgb(234, 247, 255);
+				padding: 10px;
+				width: 80%;
+				background-color: rgb(0, 45, 119);
+				color: white;
+			}
+
+			.sidebar-allfaculty input[type="text"] {
+				background-color: #f0f0f0; /* Abu-abu muda */
+				border: 1px solid #ccc; /* Border abu-abu */
+				padding: 5px; /* Ruang di dalam input */
+				border-radius: 5px; /* Sudut yang membulat */
+				font-size: 0.5em; /* Ukuran teks normal dalam input */
+				width: 80%;
+			}
+
+			.sidebar-allfaculty input[type="text"]::placeholder {
+				color: #888; /* Warna abu-abu gelap untuk placeholder */
+				font-size: 0.5em; /* Ukuran teks placeholder lebih kecil */
+				font-style: italic; /* Placeholder dengan gaya miring */
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Header Section -->
+		<header class="main-header">
+			<!-- Top Header Bar -->
+			<div class="top-header">
+				<div class="left-menu">
+					<span>CAMPUS</span>
+					<span class="lang-menu">EN &nbsp;&nbsp; | &nbsp;&nbsp; ID</span>
+				</div>
+				<div class="right-menu">
+					<a href="#">BROCHURE</a>
+					<a href="#">NEWS & EVENTS</a>
+					<a href="#">INTERNATIONAL STUDENTS</a>
+					<a href="#">FACILITIES</a>
+					<a href="#">ALUMNI</a>
+				</div>
+			</div>
+
+			<!-- Main Navigation Bar -->
+			<div class="nav-bar">
+				<div class="logo">
+					<img
+						src="../asset/image/img_logouph.png"
+						alt="Logo UPH"
+						width="150px"
+					/>
+				</div>
+				<nav>
+					<a href="#">ABOUT US</a>
+					<a href="#">STUDY PROGRAMS</a>
+					<a href="#">CAMPUS LIFE</a>
+					<a href="#">ADMISSION</a>
+					<a href="#"><i class="fas fa-search"></i></a>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section id="banner-uph">
+				<!-- Banner Section with three images -->
+				<div class="banner">
+					<img
+						src="https://www.uph.edu/wp-content/uploads/2024/01/Akreditasi-Unggul-Web-Banner-Desktop-1400x620.jpg"
+						alt="Image 1"
+					/>
+					<img
+						src="https://www.uph.edu/wp-content/uploads/2024/08/Website-Banner-New-Intake-25-26-Desktop-1400x620.jpg"
+						alt="Image 2"
+					/>
+					<img
+						src="https://www.uph.edu/wp-content/uploads/2022/04/Program-Cicilan-S2-Banner-Desktop-min-1400x620.jpg"
+						alt="Image 3"
+					/>
+				</div>
+			</section>
+
+			<section id="ListofFaculties" class="faculty-list">
+				<h2>Your Future Starts Here.</h2>
+				<p>Learn more about UPH Study Programs.</p>
+
+				<div class="faculty-layout">
+					<!-- Faculty Cards -->
+					<div class="faculty-grid">
+						<div class="sidebar-allfaculty">
+							<p>Search</p>
+							<input type="text" placeholder="type to search" />
+							<div class="faculty-desc">All study program</div>
+						</div>
+
+						<!-- Faculty Card 1 -->
+						<div class="faculty-card">
+							<img src="../asset/image/FacultyofLaw.png" alt="Faculty of Law" />
+							<div class="faculty-info">
+								<h3>Faculty of Law</h3>
+							</div>
+						</div>
+
+						<!-- Faculty Card 2 -->
+						<div class="faculty-card">
+							<img
+								src="../asset/image/FacultyofDesign.png"
+								alt="Faculty of Design"
+							/>
+							<div class="faculty-info">
+								<h3>Faculty of Design</h3>
+							</div>
+						</div>
+
+						<!-- Faculty Card 3 -->
+						<div class="faculty-card">
+							<img
+								src="../asset/image/FacultyofMedicine.png"
+								alt="Faculty of Medicine"
+							/>
+							<div class="faculty-info">
+								<h3>Faculty of Medicine</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

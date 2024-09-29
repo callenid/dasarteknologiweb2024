@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Grid Layout Examples</title>
+		<style>
+			/* General Styling */
+			body {
+				font-family: Arial, sans-serif;
+				margin: 20px;
+			}
+
+			h1 {
+				text-align: center;
+				margin-bottom: 40px;
+			}
+
+			.grid-container {
+				display: grid;
+				gap: 10px;
+				margin-bottom: 20px;
+				padding: 10px;
+				background-color: #f4f4f4;
+				border: 2px solid #ccc;
+			}
+
+			/* Styling for Grid Items */
+			.item {
+				background-color: lightblue;
+				padding: 20px;
+				text-align: center;
+				border: 1px solid #000;
+			}
+
+			/* Grid Variations */
+
+			/* 1. Two Columns Grid */
+			.two-columns {
+				grid-template-columns: 1fr 1fr; /* 2 kolom yang sama besar */
+			}
+
+			/* 2. Three Equal Columns Grid */
+			.three-columns {
+				grid-template-columns: repeat(
+					3,
+					1fr
+				); /* 3 kolom dengan ukuran yang sama */
+			}
+
+			/* 3. Four Columns with Different Sizes */
+			.four-columns {
+				grid-template-columns: 1fr 2fr 1fr 1fr; /* 4 kolom dengan lebar kolom kedua lebih besar */
+			}
+
+			/* 4. Spanning Columns Grid */
+			.span-columns {
+				grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+			}
+
+			.span-columns .item:first-child {
+				grid-column: span 2; /* Elemen pertama mengambil 2 kolom */
+			}
+		</style>
+	</head>
+	<body>
+		<h1>CSS Grid Layout Examples</h1>
+
+		<!-- Simple 2 Columns Grid -->
+		<div class="grid-container two-columns">
+			<div class="item">Item 1</div>
+			<div class="item">Item 2</div>
+		</div>
+
+		<!-- Three Equal Columns Grid -->
+		<div class="grid-container three-columns">
+			<div class="item">Item 1</div>
+			<div class="item">Item 2</div>
+			<div class="item">Item 3</div>
+		</div>
+
+		<!-- Four Columns with Different Sizes Grid -->
+		<div class="grid-container four-columns">
+			<div class="item">Item 1</div>
+			<div class="item">Item 2</div>
+			<div class="item">Item 3</div>
+			<div class="item">Item 4</div>
+		</div>
+
+		<!-- Grid with Spanning Columns -->
+		<div class="grid-container span-columns">
+			<div class="item">Item 1 (spans 2 columns)</div>
+			<div class="item">Item 2</div>
+			<div class="item">Item 3</div>
+			<div class="item">Item 4</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Banner with Automatic Image Transition</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				background-color: #f4f4f4;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+
+			/* Banner container */
+			.banner {
+				position: relative;
+				width: 80%;
+				height: 300px;
+				overflow: hidden;
+				border-radius: 10px;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+			}
+
+			/* Banner image */
+			.banner img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				animation: imageAnimation 6s infinite;
+			}
+
+			/* Different delay for each image to create the slideshow effect */
+			.banner img:nth-child(1) {
+				animation-delay: 0s;
+			}
+			.banner img:nth-child(2) {
+				animation-delay: 2s;
+			}
+			.banner img:nth-child(3) {
+				animation-delay: 4s;
+			}
+
+			/* Keyframes for image fade in/out */
+			@keyframes imageAnimation {
+				0% {
+					opacity: 0;
+				}
+				33.33% {
+					opacity: 1;
+				}
+				66.66% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Banner Section with three images -->
+		<div class="banner">
+			<img
+				src="https://www.uph.edu/wp-content/uploads/2024/01/Akreditasi-Unggul-Web-Banner-Desktop-1400x620.jpg"
+				alt="Image 1"
+			/>
+			<img
+				src="https://www.uph.edu/wp-content/uploads/2024/08/Website-Banner-New-Intake-25-26-Desktop-1400x620.jpg"
+				alt="Image 2"
+			/>
+			<img
+				src="https://www.uph.edu/wp-content/uploads/2022/04/Program-Cicilan-S2-Banner-Desktop-min-1400x620.jpg"
+				alt="Image 3"
+			/>
+		</div>
+	</body>
+</html>

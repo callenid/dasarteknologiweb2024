@@ -1,59 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>z-index Example</title>
-		<style>
-			/* Kontainer untuk membungkus elemen */
-			.container {
-				position: relative;
-				width: 400px;
-				height: 300px;
-				background-color: #f0f0f0;
-				border: 1px solid #ccc;
-				margin: 50px auto;
-			}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>z-index Example</title>
+    <style>
+      /* Kontainer untuk membungkus elemen */
+      .container {
+        position: relative;
+        width: 400px;
+        height: 300px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        margin: 50px auto;
+      }
 
-			/* Elemen pertama, posisi di bawah */
-			.box1 {
-				position: absolute;
-				top: 20px;
-				left: 20px;
-				width: 150px;
-				height: 150px;
-				background-color: red;
-				z-index: 1; /* Z-index lebih rendah */
-			}
+      /* Elemen pertama, posisi di bawah */
+      .box1 {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 150px;
+        height: 150px;
+        background-color: red;
+        z-index: 1; /* Z-index lebih rendah */
+      }
 
-			/* Elemen kedua, posisi di tengah */
-			.box2 {
-				position: absolute;
-				top: 60px;
-				left: 60px;
-				width: 150px;
-				height: 150px;
-				background-color: green;
-				z-index: 2; /* Z-index lebih tinggi dari box1 */
-			}
+      /* Elemen kedua, posisi di tengah */
+      .box2 {
+        position: absolute;
+        top: 60px;
+        left: 60px;
+        width: 150px;
+        height: 150px;
+        background-color: green;
+        z-index: 2; /* Z-index lebih tinggi dari box1 */
+      }
 
-			/* Elemen ketiga, posisi paling atas */
-			.box3 {
-				position: absolute;
-				top: 100px;
-				left: 100px;
-				width: 150px;
-				height: 150px;
-				background-color: blue;
-				z-index: 3; /* Z-index paling tinggi */
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<div class="box1">Box 1</div>
-			<div class="box2">Box 2</div>
-			<div class="box3">Box 3</div>
-		</div>
-	</body>
+      /* Elemen ketiga, posisi paling atas */
+      .box3 {
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        width: 150px;
+        height: 150px;
+        background-color: blue;
+        z-index: 3; /* Z-index paling tinggi */
+      }
+
+      .box4 {
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        width: 150px;
+        height: 150px;
+        background-color: blue;
+        z-index: 4; /* Z-index paling tinggi */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box1">Box 1</div>
+      <div class="box2">Box 2</div>
+      <div class="box3">Box 3</div>
+      <div class="box4">HELLO</div>
+    </div>
+  </body>
 </html>
